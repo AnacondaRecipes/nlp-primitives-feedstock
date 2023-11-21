@@ -37,7 +37,7 @@ test:
     - pip
 
 about:
-  summary: natural language processing primitives for Featuretools
+  home: https://innovation.alteryx.com/natural-language-processing-featuretools
   license: Apache-2.0 AND BSD-2-Clause AND BSD-3-Clause AND CC0-1.0 AND LGPL-2.1 AND GPL-3.0 AND MIT AND BSD-4-Clause AND EPL-2.0
   license_file:
     - LICENSE
@@ -66,6 +66,14 @@ about:
     - nlp_primitives/data/nltk-data/corpora/omw-1.4/bul/LICENSE
     - nlp_primitives/data/nltk-data/corpora/omw-1.4/mcr/LICENSE
     - nlp_primitives/data/nltk-data/corpora/omw-1.4/cow/LICENSE
+  license_family: Other
+  summary: natural language processing primitives for Featuretools
+  description: |
+    nlp_primitives is a Python library with Natural Language Processing Primitives, intended for use with Featuretools.
+    nlp_primitives allows you to make use of text data in your machine learning pipeline in the same pipeline as the
+    rest of your data.
+  doc_url: https://innovation.alteryx.com/natural-language-processing-featuretools
+  dev_url: https://github.com/alteryx/nlp_primitives
 
 extra:
   recipe-maintainers:
