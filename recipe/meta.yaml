@@ -1,0 +1,73 @@
+{% set name = "nlp_primitives" %}
+{% set version = "2.10.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5ae35bd2aaec491fed6f6ff16b87dd6d12cd57d8009200e1533445559f4ecb61
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps -vv --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python >=3.8,<4
+    - setuptools >=61.0.0
+    - wheel
+    - pip
+  run:
+    - python >=3.8,<4
+    - numpy >=1.17.5
+    - pandas >=1.3.0
+    - featuretools >=1.5.0
+    - nltk >=3.4.5
+    - scikit-learn >=0.20.0
+    - woodwork >=0.8.1
+
+test:
+  imports:
+    - nlp_primitives
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: natural language processing primitives for Featuretools
+  license: Apache-2.0 AND BSD-2-Clause AND BSD-3-Clause AND CC0-1.0 AND LGPL-2.1 AND GPL-3.0 AND MIT AND BSD-4-Clause AND EPL-2.0
+  license_file:
+    - LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/ron/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/pol/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/fra/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/fin/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/msa/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/heb/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/nor/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/dan/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/slk/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/slv/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/iwn/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/ita/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/swe/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/ell/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/jpn/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/por/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/hrv/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/nld/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/isl/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/arb/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/tha/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/als/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/bul/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/mcr/LICENSE
+    - nlp_primitives/data/nltk-data/corpora/omw-1.4/cow/LICENSE
+
+extra:
+  recipe-maintainers:
+    - boldorider4
