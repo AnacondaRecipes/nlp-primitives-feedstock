@@ -10,6 +10,8 @@ source:
   sha256: 5ae35bd2aaec491fed6f6ff16b87dd6d12cd57d8009200e1533445559f4ecb61
 
 build:
+  # skip s390x because no arrow-cpp --> no pyarrow --> no featuretools
+  skip: True  # [s390x]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation . -vv
   number: 0
 
